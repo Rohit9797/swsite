@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Scriptedwebs - Web Development & IT Solutions for Startups</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="description" content="Scriptedwebs helps startups and small businesses grow with expert web development, IT solutions, and automation tools. Build your digital presence today!">
+    <meta name="keywords" content="Scriptedwebs, Web Development, IT Solutions, Automation Tools, Startups, Small Business, Pune">
+
+    <!-- Favicon -->
+    <link href="static/img/favicon.png" type="image/png" rel="icon">
+    
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Pune, Maharashtra,
+                        India</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+91 9588411757</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>info@scriptedwebs.in</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        aria-label="Follow us on Twitter" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        aria-label="Follow us on LinkedIn" href="https://www.linkedin.com/company/scriptedwebs/"><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        aria-label="Follow us on Instagram" href="https://www.instagram.com/scriptedwebs/"><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-4 py-3 py-lg-0">
+            <a href="{{ url_for('index') }}" class="navbar-brand p-0">
+                <h1 class="m-0"><img src="static/img/logo.png" alt="Logo" style="height: 50px; margin-top:-5px;">Scriptedwebs</h1>
+                 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{{ url_for('index') }}" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url_for('service') }}" class="nav-item nav-link">Services</a>
+                    <a href="{{ url_for('price') }}" class="nav-item nav-link">Pricing</a>
+                    <a href="{{ url_for('product') }}" class="nav-item nav-link">Product</a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About Us</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{{ url_for('about') }}" class="dropdown-item">Profile</a>
+                            <a href="{{ url_for('feature') }}" class="dropdown-item">Our features</a>
+                            <a href="{{ url_for('career') }}" class="dropdown-item">career</a>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('contact') }}" class="nav-item nav-link">Contact</a>
+                </div>
+                <!-- <a href="{{ url_for('career') }}" class="btn btn-primary py-2 px-4 ms-3">Hire Developer</a> -->
+            </div>
+        </nav>
+
+        <!-- slide image hero -->
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="static/img/slide-1.webp" alt="Welcome Banner">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Build. Analyze. Grow.</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Turning ideas into digital success
+                            </h1>
+                            <a href="{{ url_for('contact') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get a Free
+                                Quote</a>
+                            <a href="{{ url_for('contact') }}"
+                                class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Let’s
+                                Talk</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="static/img/slide-2.webp" alt="Welcome Banner">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Smart Websites. Smarter
+                                Insights.</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Design That Drives Growth</h1>
+                            <a href="{{ url_for('career') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Hire Us
+                                </a>
+                            <a href="{{ url_for('contact') }}"
+                                class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-3 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-users text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Happy Clients</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">23</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">Projects Completed</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">59</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-award text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Years in Business</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">2</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4"
+                        style="height: 150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-headset text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">Support Hours</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">1000</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts Start -->
+
+
+    <!-- About Teaser Start -->
+    <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                    <h2 class="mb-3">Delivering Trusted IT Solutions</h2>
+                    <p class="mb-4">
+                        With over 2 years of expertise, we specialize in innovative, reliable, and scalable IT solutions
+                        tailored to your business needs.
+                    </p>
+                    <a href="{{ url_for('about') }}" class="btn btn-primary px-4 py-2 rounded-pill">Learn More</a>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid rounded shadow" src="static/img/about.webp" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Teaser End -->
+
+
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
+                <h1 class="mb-0">Your business deserves more than just a website — it deserves a digital strategy.</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="row g-5">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.2s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fas fa-bolt text-white"></i>
+                            </div>
+                            <h4>Fast & Reliable</h4>
+                            <p class="mb-0">Lightning-fast web solutions with zero compromise on quality or uptime.</p>
+                        </div>
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.6s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fas fa-lightbulb text-white"></i>
+                            </div>
+                            <h4>Innovative Designs</h4>
+                            <p class="mb-0">Stand out with modern, mobile-friendly, and SEO-ready UI/UX.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4  wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s"
+                            src="static/img/feature.webp" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row g-5">
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.4s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-users-cog text-white"></i>
+                            </div>
+                            <h4>Professional Staff</h4>
+                            <p class="mb-0">Our team consists of experienced developers and creative strategists
+                                committed to your growth.</p>
+                        </div>
+                        <div class="col-12 wow zoomIn" data-wow-delay="0.8s">
+                            <div class="bg-primary rounded d-flex align-items-center justify-content-center mb-3"
+                                style="width: 60px; height: 60px;">
+                                <i class="fa fa-phone-alt text-white"></i>
+                            </div>
+                            <h4>24/7 Support</h4>
+                            <p class="mb-0">We’re here for you anytime — day or night. Get dedicated assistance when you
+                                need it the most.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features Start -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
+                <h1 class="mb-0">Web & Data Services to Drive Smarter Business</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-code text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Web Development</h4>
+                        <p class="m-0">Launch-ready websites built for performance, scalability, and modern user
+                            experience — everything your startup needs to stand out online.</p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-chart-pie text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Data Analytics</h4>
+                        <p class="m-0">Make sense of your startup’s data with clear, actionable insights. From
+                            dashboards to strategy — we turn data into your growth engine.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fab fa-android text-white"></i>
+                        </div>
+                        <h4 class="mb-3">WebApps Development</h4>
+                        <p class="m-0">Build apps that your users love. We create fast, intuitive, and scalable apps
+                            tailored to your startup’s goals.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-tools text-white"></i>
+                        </div>
+                        <h4 class="mb-3">Maintenance & Support</h4>
+                        <p class="m-0">Need help after your website goes live? Our paid support plans cover updates,
+                            fixes, and peace of mind — so your site keeps working, even when you're not watching.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                    <div
+                        class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-search text-white"></i>
+                        </div>
+                        <h4 class="mb-3">SEO Optimization</h4>
+                        <p class="m-0">Boost your visibility with smart, startup-focused SEO strategies that drive
+                            results — not just rankings.
+                        </p>
+                        <a class="btn btn-lg btn-primary rounded" href="">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                    <div
+                        class="position-relative bg-primary rounded h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
+                        <h3 class="text-white mb-3">Let’s Talk Pricing</h3>
+                        <p class="text-white mb-3">Tell us about your project, and we’ll give you a transparent,
+                            tailored quote — no strings attached.</p>
+                        <h2 class="text-white mb-0">+91 9588411757</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Pricing Teaser Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Our Pricing</h5>
+                <h2 class="mb-0">Flexible Plans for Every Business</h2>
+                <p class="mt-2">Choose the plan that fits your needs — from startups to enterprises, we’ve got you
+                    covered.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="rounded shadow-sm p-4 text-center h-100">
+                        <h4 class="text-primary">Basic</h4>
+                        <h2 class="fw-bold">₹4,999</h2>
+                        <p class="text-muted">Perfect for small businesses starting online</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="rounded shadow-sm p-4 text-center h-100 border border-primary">
+                        <h4 class="text-primary">Standard</h4>
+                        <h2 class="fw-bold">₹14,999</h2>
+                        <p class="text-muted">Best for growing businesses</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="rounded shadow-sm p-4 text-center h-100">
+                        <h4 class="text-primary">Advanced</h4>
+                        <h2 class="fw-bold">₹29,999+</h2>
+                        <p class="text-muted">Custom solutions for enterprises</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="{{ url_for('price') }}" class="btn btn-primary px-5 py-2 rounded-pill">
+                    View Full Pricing
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Teaser End -->
+
+
+
+    <!-- Quote Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">Book a Free Consultation</h5>
+                        <h1 class="mb-0">Share your vision and we’ll get back with a custom quote that fits your goals
+                            and budget.</h1>
+                    </div>
+                    <div class="row gx-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support
+                            </h5>
+                        </div>
+                    </div>
+                    <p class="mb-4">Turn Your Ideas Into Reality — Let’s Talk
+                        Whether you’re starting fresh or looking to enhance your existing project, we’re here to help.
+                        Share your goals, challenges, and vision, and our team will create a tailored plan just for you.
+                        We’ll provide a transparent, no-obligation quote that aligns with your needs and budget — so you
+                        can take the next step with confidence.</p>
+                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">Call to ask any question</h5>
+                            <h4 class="text-primary mb-0">+91 9588411757</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
+                        data-wow-delay="0.9s">
+                        <form method="POST" action="{{ url_for('submit_form') }}">
+                            <div class="row g-3">
+                                <div class="col-xl-12">
+                                    <input type="text" name="name" class="form-control bg-light border-0"
+                                        placeholder="Your Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" name="email" class="form-control bg-light border-0"
+                                        placeholder="Your Email" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <select name="service" class="form-select bg-light border-0" style="height: 55px;"
+                                        required>
+                                        <option selected disabled>Select A Service</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Data Analytics">Data Analytics</option>
+                                        <option value="Support">Support</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-control bg-light border-0" rows="3"
+                                        placeholder="Message"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quote End -->
+
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Latest Blog</h5>
+                <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="static/img/blog-1.webp" alt="Web Development">
+                            <h6
+                                class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4">
+                                Web Development</h6>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>Rohit</small>
+                                <small><i class="far fa-calendar-alt text-primary me-2"></i>11 Aug, 2025</small>
+                            </div>
+                            <h4 class="mb-3">Top 5 Web Development Trends to Watch in 2025</h4>
+                            <p>Discover the latest web development innovations shaping the future of websites and apps
+                                in 2025.</p>
+                            <a class="text-uppercase"
+                                href="https://codewebs.pythonanywhere.com/post/introduction-to-django-for-beginners/">Read
+                                More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="static/img/blog-2.webp" alt="Data Analytics">
+                            <h6
+                                class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4">
+                                Data Analytics</h6>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>RD</small>
+                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2025</small>
+                            </div>
+                            <h4 class="mb-3">Data Analytics: What Every Beginner Should Know</h4>
+                            <p>Data analytics turns raw data into insights. For beginners, it’s about learning the
+                                basics and how data drives smarter decisions.</p>
+                            <a class="text-uppercase"
+                                href="https://codewebs.pythonanywhere.com/post/introduction-to-data-analytics-a-beginners-guide/">Read
+                                More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-img position-relative overflow-hidden">
+                            <img class="img-fluid" src="static/img/blog-3.webp" alt="Artificial Intelligence">
+                            <h6
+                                class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4">
+                                AI</h6>
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex mb-3">
+                                <small class="me-3"><i class="far fa-user text-primary me-2"></i>John Doe</small>
+                                <small><i class="far fa-calendar-alt text-primary me-2"></i>01 Jan, 2045</small>
+                            </div>
+                            <h4 class="mb-3">How AI is Transforming Web Development</h4>
+                            <p>Artificial Intelligence is reshaping how websites are designed, built, and
+                                optimized. From faster coding to smarter user experiences,</p>
+                            <a class="text-uppercase"
+                                href="https://codewebs.pythonanywhere.com/post/top-5-ai-projects-you-can-build-in-2025/">Read
+                                More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Start -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel">
+                    <img src="static/img/vendor-1.webp">
+                    <img src="static/img/vendor-2.webp">
+                    <img src="static/img/vendor-3.webp">
+                    <img src="static/img/vendor-4.webp">
+                    <img src="static/img/vendor-5.webp">
+                    <img src="static/img/vendor-6.webp">
+                    <img src="static/img/vendor-7.webp">
+                    <img src="static/img/vendor-8.webp">
+                    <img src="static/img/vendor-9.webp">
+                    <img src="static/img/vendor-10.webp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div
+                        class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <a href="{{ url_for('index') }}" class="navbar-brand">
+                            <h1 class="m-0 text-white">ScriptedWebs</h1>
+                        </a>
+                        <p class="mt-3 mb-4"> Built for Startups, Delivered to Your Inbox.
+                            <br>Get smart web tips, growth hacks, and updates from ScriptedWebs — straight to your
+                            inbox. No
+                            fluff, just startup fuel.
+                        </p>
+                        <form method="POST" action="{{ url_for('subscribe') }}">
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control border-white p-3"
+                                    placeholder="Your Email" required>
+                                <button type="submit" class="btn btn-dark">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Pune, Maharashtra, India</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">info@scriptedwebs.in</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+91 9588411757</p>
+                            </div>
+                            <div class="d-flex mt-4">
+
+                                <a class="btn btn-primary btn-square me-2" href="#"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square me-2"
+                                    href="https://www.linkedin.com/company/scriptedwebs/"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-primary btn-square" href="https://www.instagram.com/scriptedwebs/"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Company</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="{{ url_for('index') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="{{ url_for('service') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Services</a>
+                                <a class="text-light mb-2" href="{{ url_for('price') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Pricing</a>
+                                <a class="text-light mb-2" href="{{ url_for('product') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Product</a>
+                                <a class="text-light mb-2" href="{{ url_for('about') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light" href="{{ url_for('contact') }}"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Services</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Web Development</a>
+                                <a class="text-light mb-2"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Data Analytics</a>
+                                <a class="text-light mb-2"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>WebApps Development</a>
+                                <a class="text-light mb-2"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Maintenance & Support</a>
+                                <a class="text-light mb-2"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Seo Optimization</a>
+                                <a class="text-light"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Hosting & Deployment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; 2025 <a class="text-white border-bottom" href="#">ScriptedWebs</a>. All
+                            Rights Reserved.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/lib/wow/wow.min.js"></script>
+    <script src="static/lib/easing/easing.min.js"></script>
+    <script src="static/lib/waypoints/waypoints.min.js"></script>
+    <script src="static/lib/counterup/counterup.min.js"></script>
+    <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
